@@ -386,31 +386,11 @@ void write(int koarJ, int koarI)//вывод поля на экран
 		}
 		cout << endl;
 
-		/*if (koarJ - 1 != -1&& koarI - 1&& mas[koarJ - 1][koarI - 1] == 0)
-		{
-		int j = koarJ - 1, i = koarI - 1;
-		do { j++;i++; if ((j - 1) != -1 && ma[j - 1][i] != 7) { ma[j - 1][i] = intch(mas[j - 1][i]); } } while (ma[j - 1][i] == '0');
-		j = koarJ - 1, i = koarI - 1;
-		do { j++;i++; if ((j - 1) != -1 && i - 1 != -1 && mas[j - 1][i - 1] != 7) { ma[j - 1][i - 1] = intch(mas[j - 1][i - 1]); } } while (ma[j - 1][i - 1] == '0');
-		j = koarJ - 1, i = koarI - 1;
-		do { j++;i++; if ((j - 1) != -1 && i + 1 != A&&mas[j - 1][i + 1] != 7) { ma[j - 1][i + 1] = intch(mas[j - 1][i + 1]); } } while (ma[j - 1][i + 1] == '0');
-		j = koarJ - 1, i = koarI - 1;
-		do { j++;i++; if (i - 1 != -1&& ma[j][i - 1]!=7) { ma[j][i - 1] = intch(mas[j][i - 1]); } } while (ma[j][i - 1] == '0');
-		j = koarJ - 1, i = koarI - 1;
-		do { j++;i++; if (j + 1 != A&&i - 1 != -1 && mas[j + 1][i - 1] != 7) { ma[j + 1][i - 1] = intch(mas[j + 1][i - 1]); } } while (ma[j + 1][i - 1] == '0');
-		j = koarJ - 1, i = koarI - 1;
-		do { j++;i++; if (j + 1 != A&&mas[j + 1][i] != 7) { ma[j + 1][i] = intch(mas[j + 1][i]); } } while (ma[j + 1][i] == '0');
-		j = koarJ - 1, i = koarI - 1;
-		do { j++;i++; if (j + 1 != A&& i + 1 != A&&mas[j + 1][i + 1] != 7) { ma[j + 1][i + 1] = intch(mas[j + 1][i + 1]); } } while (ma[j + 1][i + 1] == '0');
-		j = koarJ - 1, i = koarI - 1;
-		do { j++;i++; if (i + 1 != A &&mas[j][i + 1] != 7) { ma[j][i + 1] = intch(mas[j][i + 1]); } } while (ma[j][i + 1] == '0');
-		j = koarJ - 1, i = koarI - 1;
-
-
-		}*/
+		
 	}
 	cout << "  ___\n";
-	cout << " |ESC| СОХРАНИТЬ И ВЫЙТИ\n";
+	cout << " |ESC| СОХРАНИТЬ И ВЫЙТИ\n" << endl
+		<< "|TAB| ВЫЙТИ";
 }
 int happy_end()//Сообщение пользователю о победе
 {
@@ -565,6 +545,7 @@ download_error:;//Возвращение к метку если нечего загружать
 		case 56:koarJ = 8;break;
 		case 57:koarJ = 9;break;
 		case 27:save();return;
+		case 9:exit(0);
 		}
 		if (koarJ<1 || koarJ>A) { cout << "Было сложно,но вы промахнудись.\n";goto error_1; }
 	error_2:;//Все аналогично с koarJ
@@ -582,6 +563,7 @@ download_error:;//Возвращение к метку если нечего загружать
 		case 56:koarI = 8;break;
 		case 57:koarI = 9;break;
 		case 27:save();return;
+		case 9:exit(0);
 		}
 		if (koarI<1 || koarI>A) { cout << "Было сложно,но вы промахнулись.\n";goto error_2; }
 
